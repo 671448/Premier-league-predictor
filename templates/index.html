@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Premier League Match Prediction</title>
+    </head>
+<body>
+    <h1>Premier League Match Prediction</h1>
+    <form method="POST" action="/predict">
+        <label for="home_team">Home Team:</label>
+        <select name="home_team" id="home_team" required>
+            {% for team in teams %}
+            <option value="{{ team }}" {% if team == selected_home_team %}selected{% endif %}>{{ team }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="away_team">Away Team:</label>
+        <select name="away_team" id="away_team" required>
+            {% for team in teams %}
+            <option value="{{ team }}" {% if team == selected_away_team %}selected{% endif %}>{{ team }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+    <h2>Prediction: {{ prediction_text }}</h2>
+    <p>Home Win Probability: {{ (away_win_prob * 100)|round(2) }}%</p>
+    <p>Draw Probability: {{ (draw_prob * 100)|round(2) }}%</p>
+    <p>Away Win Probability: {{ (home_win_prob * 100)|round(2) }}%</p>
+    {% endif %}
+</body>
+</html>
