@@ -65,3 +65,8 @@ REFERANSER
 1.	(Inspirasjon for første iterasjon) https://www.kaggle.com/datasets/evangower/premier-league-matches-19922022
 2.	(Hentet dataset) https://www.kaggle.com/datasets/saife245/english-premier-league
 3.	https://github.com/tara-nguyen/english-premier-league-datasets-for-10-seasons/blob/main/epldat10seasons/epl-allseasons-matchstats.csv
+
+
+
+Link til videodemo av prosjektet:
+https://youtu.be/90Gna-qPsqY
